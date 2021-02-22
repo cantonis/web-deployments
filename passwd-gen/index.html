@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Password Generator</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<style>
+		.codeLine {
+			font-family: 'Courier New', Courier, monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<br>
+		<h1>Generatore di password</h1>
+
+		<form>
+			<div class="form-group">
+				<label for="passwdLength">Lunghezza della password</label>
+				<input type="number" class="form-control" id="passwdLength" placeholder="Inserisci lunghezza" min="5"
+					step="5" value="20">
+			</div>
+			<div class="form-group">
+				<label for="passwd">Password generata</label>
+				<input type="text" id="passwd" class="form-control codeLine" disabled>
+			</div>
+			<div class="form-group">
+				<label for="passwd_no_sep">Password senza i separatori</label>
+				<input type="text" id="passwd_no_sep" class="form-control codeLine" disabled>
+			</div>
+			<button type="button" class="btn btn-primary" onclick="passwdGen()">Genera password</button>
+		</form>
+	</div>
+
+</body>
+
+<!-- #region Bootstrap import-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<!-- #endregion -->
+
+<script>
+	function passwdGen() {
+		const passwdLength = document.getElementById("passwdLength").value;
+		const dict = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+		let passwd = "";
+
+		for (let i = 0; i <= passwdLength; i++) {
+			let pos = Math.floor(Math.random() * dict.length);
+			passwd += dict[pos];
+
+			if (i % 5 == 0 && i != 0 && i != passwdLength) passwd += "-";
+		}
+
+		console.log(passwd)
+		document.getElementById("passwd").value = passwd;
+		document.getElementById("passwd_no_sep").value = passwd.replace(/-/g, "");
+	}
+
+	document.addEventListener("DOMContentLoaded", passwdGen());
+</script>
+
+</html>
