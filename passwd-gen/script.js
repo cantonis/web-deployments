@@ -16,4 +16,11 @@ function passwdGen() {
 	document.getElementById("passwd_no_sep").value = passwd.replace(/-/g, "");
 }
 
+function copyPasswd(id) {
+	const node = document.getElementById(id);
+	node.select()
+	document.execCommand("copy");
+	alert("Password copiata.")
+}
+
 document.addEventListener("DOMContentLoaded", passwdGen());
