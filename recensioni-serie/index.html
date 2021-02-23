@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='it'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Simone Cantoni | Recensioni Film/Serie</title>
+	<link rel='icon' type='image/png' href='../favicon.png' />
+</head>
+
+<!-- #region Bootstrap import-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- #endregion -->
+
+<body>
+	<br>
+	<div class='container'>
+		<h1>Recensioni Film/Serie</h1>
+		<button class="btn btn-success" onclick="aggiungi()">Aggiungi</button><br><br>
+
+		<div class="input-group">
+			<select class="custom-select" id="lista-titoli" onchange="mostraVoto()">
+				<option value="-1" selected>Titolo film/serie</option>
+			</select>
+			<div class="input-group-append">
+				<button class="btn btn-danger" onclick="elimina()">Elimina</button>
+			</div>
+		</div>
+		<div class="input-group">
+			<select id="lista-valutazioni" class="custom-select">
+				<option value="0" selected>Valutazione</option>
+				<option value="1">⭐️</option>
+				<option value="2">⭐️⭐️</option>
+				<option value="3">⭐️⭐️⭐️</option>
+				<option value="4">⭐️⭐️⭐️⭐️</option>
+				<option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+			</select>
+			<div class="input-group-append">
+				<button class="btn btn-warning" onclick="valuta()">Valuta</button>
+			</div>
+		</div>
+		<br>
+
+		<table class="table table-hover table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Titolo film/serie</th>
+					<th scope="col">Valutazione</th>
+				</tr>
+			</thead>
+			<tbody id="table-list">
+
+			</tbody>
+		</table>
+		<small><a href="../" class="badge badge-primary">Torna alla Home</a></small>
+	</div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
