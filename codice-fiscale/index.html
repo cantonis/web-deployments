@@ -31,16 +31,16 @@
 			<div class="form-group">
 				<label for="cognome">Cognome</label>
 				<input type="text" id="cognome" class="form-control" placeholder="Inserisci cognome"
-					onchange="bordoNormale(this)">
+					oninput="bordoNormale(this)">
 			</div>
 			<div class="form-group">
 				<label for="nome">Nome</label>
 				<input type="text" placeholder="Inserisci nome" id="nome" class="form-control"
-					onchange="bordoNormale(this)">
+					oninput="bordoNormale(this)">
 			</div>
 			<div class="form-group">
 				<label for="sesso">Sesso</label>
-				<select id="sesso" class="form-control" onchange="bordoNormale(this)">
+				<select id="sesso" class="form-control" oninput="bordoNormale(this)">
 					<option value="0" selected>Scegli</option>
 					<option value="M">Maschio</option>
 					<option value="F">Femmina</option>
@@ -50,7 +50,7 @@
 				<label>Data di nascita</label>
 				<div class="row">
 					<div class="col">
-						<select id="giorno" class="form-control" onchange="bordoNormale(this)">
+						<select id="giorno" class="form-control" oninput="bordoNormale(this)">
 							<option value="0" selected>Giorno</option>
 							<option value="01">1</option>
 							<option value="02">2</option>
@@ -86,7 +86,7 @@
 						</select>
 					</div>
 					<div class="col">
-						<select id="mese" class="form-control" onchange="bordoNormale(this)">
+						<select id="mese" class="form-control" oninput="bordoNormale(this)">
 							<option value="0" selected>Mese</option>
 							<option value="1">Gennaio</option>
 							<option value="2">Febbraio</option>
@@ -103,7 +103,7 @@
 						</select>
 					</div>
 					<div class="col">
-						<select id="anno" class="form-control" onchange="bordoNormale(this)">
+						<select id="anno" class="form-control" oninput="bordoNormale(this)">
 							<option value="1900">1900</option>
 							<option value="1901">1901</option>
 							<option value="1902">1902</option>
@@ -234,7 +234,7 @@
 			<div class="form-group">
 				<label for="luogo">Luogo di nascita</label>
 				<input type="text" placeholder="Inserisci il comune di nascita" id="luogo" class="form-control"
-					onchange="bordoLuogo(this)">
+					oninput="bordoLuogo(this)">
 			</div>
 		</form>
 		<button class="btn btn-success" onclick="controllaInput()">Calcola codice fiscale</button><br><br>
