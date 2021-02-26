@@ -1,5 +1,9 @@
 function passwdGen() {
-	const passwdLength = document.getElementById("passwdLength").value;
+	let passwdLength = document.getElementById("passwdLength");
+
+	if (passwdLength.value == "") { passwdLength.style.borderColor = "red"; return; }
+	else { passwdLength.style.borderColor = ""; passwdLength = passwdLength.value }
+
 	const dict = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 
 	let passwd = "";
