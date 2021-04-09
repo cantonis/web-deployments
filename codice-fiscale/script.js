@@ -1,7 +1,7 @@
 let COMUNI = new Object();
 
 window.addEventListener("DOMContentLoaded", () => {
-	const href = location.protocol + "//" + location.host + location.pathname + "elenco-comuni.csv";
+	const href = location.protocol + "//" + location.host + "/codice-fiscale/" + "elenco-comuni.csv";
 
 	fetch(href)
 		.then(response => response.text())
