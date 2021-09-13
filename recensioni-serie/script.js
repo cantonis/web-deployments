@@ -10,7 +10,7 @@ class Titolo {
 	}
 }
 
-const localStorageKey = "EoTVEARUsV9Hg8ANRUEfG";
+const localStorageKey = "cantooo.github.io/recensioni-serie_localStorageKey";
 let titoli;
 getStorage();
 
