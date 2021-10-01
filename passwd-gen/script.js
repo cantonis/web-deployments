@@ -23,7 +23,7 @@ function passwdGen() {
 function copyPasswd(id) {
 	const node = document.getElementById(id);
 	node.select()
-	document.execCommand("copy");
+	navigator.clipboard.writeText(node.value);
 	alert("Password copiata.")
 }
 
